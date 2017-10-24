@@ -1,6 +1,7 @@
 class Pencil {
   
   constructor(leadLength) {
+    this.initialLeadLength = leadLength;
     this.leadLength = leadLength;
     this.text = '';
   }
@@ -16,11 +17,20 @@ class Pencil {
           }
         }
         this.text += character;
+      } else {
+        this.text += ' ';
       }
     }
     return text;
   }
-  
+
+  sharpen() {
+    this.leadLength = this.initialLeadLength;
+  }
+
+  erase(toErase) {
+    this.text = this.text.replace(toErase, ' '.repeat(toErase.length));
+  }  
 }
 
 export { Pencil as default }

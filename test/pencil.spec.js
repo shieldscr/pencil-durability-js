@@ -16,9 +16,9 @@ describe('pencil', () => {
     expect(pencil.leadLength).toBe(0);
   });
   
-  test('no longer writes when it is out of lead', () => {
+  test('writes spaces when it is out of lead', () => {
     pencil.write('abc');
-    expect(pencil.text).toBe('a');
+    expect(pencil.text).toBe('a  ');
   });
   
   test('can return what it wrote', () => {
@@ -36,5 +36,24 @@ describe('pencil', () => {
   test('spaces expend no lead', () => {
     pencil.write(' ');
     expect(pencil.leadLength).toBe(1);
+  });
+
+  test('can be sharpened', () => {
+    pencil.write('a'); 
+    pencil.sharpen();
+    expect(pencil.leadLength).toBe(1);
+  });
+
+  test('can erase', () => {
+    pencil.write('a');
+    pencil.erase('a');
+    expect(pencil.text).toBe(' ');
+  });
+
+  test('can erase word', () => {
+    pencil = new Pencil(10);
+    pencil.write('abc123');
+    pencil.erase('abc');
+    expect(pencil.text).toBe('   123');
   });
 });
