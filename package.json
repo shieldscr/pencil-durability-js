@@ -1,0 +1,16 @@
+{
+  "name": "pencil-durability-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cory Shields",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^21.2.1"
+  }
+}
