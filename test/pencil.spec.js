@@ -56,4 +56,14 @@ describe('pencil', () => {
     pencil.erase('abc');
     expect(pencil.text).toBe('   123');
   });
+
+  test('can erase multiple words', () => {
+    pencil = new Pencil(100);
+    pencil.write('Bigfoot hides in trees and hides in bushes');
+    pencil.erase('hides');
+    expect(pencil.text).toBe('Bigfoot       in trees and hides in bushes');
+    pencil.erase('hides');
+    expect(pencil.text).toBe('Bigfoot       in trees and       in bushes');
+  });
+
 });
