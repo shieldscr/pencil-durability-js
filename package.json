@@ -5,7 +5,8 @@
   "author": "Cory Shields",
   "license": "MIT",
   "scripts": {
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "ciTest": "jest"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
